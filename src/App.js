@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import CollectionCard from "./components/CollectionCard";
 import Punklist from "./components/Punklist";
 import axios from "axios";
+import Main from "./components/Main";
 
 // use effect is for API call.
 
@@ -24,6 +25,7 @@ function App() {
   return (
     <div className="app">
       <Header />
+      <Main/>
       {/* <CollectionCard
         id={0}
         name={"Cyber Punk"}
