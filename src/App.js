@@ -1,7 +1,6 @@
 import "./App.css";
 import Header from "./components/Header";
 import { useState, useEffect } from "react";
-import CollectionCard from "./components/CollectionCard";
 import Punklist from "./components/Punklist";
 import axios from "axios";
 import Main from "./components/Main";
@@ -10,7 +9,7 @@ import Main from "./components/Main";
 
 function App() {
   const [punkListData, setPunkListData] = useState([]);
-
+  const [selectedPunk, setSelectedPunk] = useState(0);
   useEffect(() => {
     const getMyNfts = async () => {
       const openseaData = await axios.get(
@@ -25,14 +24,15 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Main/>
-      {/* <CollectionCard
-        id={0}
-        name={"Cyber Punk"}
-        traits={[{ value: 7 }]}
-        image="https://lh3.googleusercontent.com/hJKQWDj6ZUlEnBsdxH-_gK7sAosVTJjBLP_UE4TD-wVBFATfXgRJheHy1CGwp8Ly3Gz3yNvW7H9fJOjbyYt6qsmDzcld6ObliXouJz8=w301"
-      /> */}
-      <Punklist punkListData={punkListData} />
+      {punkListData.length > 0 && (
+        <>
+          <Main punkListData={punkListData} selectedPunk={selectedPunk} />
+          <Punklist
+            punkListData={punkListData}
+            setSelectedPunk={setSelectedPunk}
+          />
+        </>
+      )}
     </div>
   );
 }
