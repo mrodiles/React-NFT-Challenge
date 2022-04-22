@@ -37,20 +37,14 @@
 
 .title {
   font-size: 96px;
-  font-weight: bold;
+  font-weight: 800;
 }
 
-.itemNumber {
-  color: #a1a5b0;
-  font-size: 72px;
-  align-self: center;
-}
 .owner {
   display: flex;
   margin: 10px 0;
   height: 50px;
 }
-
 .ownerImageContainer {
   height: 50px;
   width: 50px;
@@ -59,8 +53,7 @@
   overflow: hidden;
   object-fit: contain;
 }
-
-.ownerImageContainer {
+.ownerImageContainer > img {
   height: 100%;
   width: 100%;
 }
@@ -86,4 +79,9 @@
 .ownerLink > img {
   height: 100%;
   width: 100%;
+}
+.itemNumber {
+  color: #a1a5b0;
+  font-size: 72px;
+  align-items: center;
 }

@@ -2,8 +2,8 @@ import "./App.css";
 import Header from "./components/Header";
 import { useState, useEffect } from "react";
 import Punklist from "./components/Punklist";
-import axios from "axios";
 import Main from "./components/Main";
+import axios from "axios";
 
 // use effect is for API call.
 
@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     const getMyNfts = async () => {
       const openseaData = await axios.get(
-        "https://testnets-api.opensea.io/assets?asset_contract_address=0xB2a100F369936F56880C3735a4FA6e748604EBc3&order_direction=asc"
+        "https://testnets-api.opensea.io/assets?asset_contract_address=0xB2a100F369936F56880C3735a4FA6e748604EBc3&order_direction=desc"
       );
       console.log(openseaData.data.assets);
       setPunkListData(openseaData.data.assets);

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 // import React from "react";
 import instagramLogo from "../assets/instagram.png";
-import moreIcon from "../assets/more.png";
 import twitterLogo from "../assets/twitter.png";
+import moreIcon from "../assets/more.png";
 import "./Main.css";
 
 const Main = ({ selectedPunk, punkListData }) => {
@@ -20,24 +20,21 @@ const Main = ({ selectedPunk, punkListData }) => {
             <img className="selectedPunk" src={activePunk.image_url} alt="" />
           </div>
         </div>
-
         <div className="punkDetails" style={{ color: "#fff" }}>
-          <div className="title">Cyber Punk</div>
-          <span className="itemNumber">.#3</span>
-        </div>
-        <div className="owner">
-          <div className="ownerImageContainer">
-            <img
-              src={
-                "https://lh3.googleusercontent.com/hJKQWDj6ZUlEnBsdxH-_gK7sAosVTJjBLP_UE4TD-wVBFATfXgRJheHy1CGwp8Ly3Gz3yNvW7H9fJOjbyYt6qsmDzcld6ObliXouJz8=w301"
-              }
-              alt=""
-            />
+          <div className="title">
+            {activePunk.name}
+            <span className="itemNumber"> .#{activePunk.token_id}</span>
           </div>
-          <div className="ownerDetails">
-            <div className="ownerNameAndHandle">
-              <div>0x3143jrks464ube84yr8ehfdij4ff4dfsgf</div>
-              <div className="ownerHandle">@MikeCode</div>
+
+          <div className="owner">
+            <div className="ownerImageContainer">
+              <img src={activePunk.owner.profile_img_url} alt="" />
+            </div>
+            <div className="ownerDetails">
+              <div className="ownerNameAndHandle">
+                <div>{activePunk.owner.address}</div>
+                <div className="ownerHandle">@Mike_Log_93</div>
+              </div>
             </div>
             <div className="ownerLink">
               <img src={instagramLogo} alt="" />
